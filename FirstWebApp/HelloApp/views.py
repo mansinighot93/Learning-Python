@@ -1,17 +1,14 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Welcome To Transflower")
+    #return HttpResponse("Welcome to Transflower")
+    return render(request, 'HelloApp/home.html')
 
 def about(request):
-    return HttpResponse("Transflower pvt.ltd")
-
+    #return HttpResponse("Transflower Learning Pvt. Ltd.")
+    return render(request, 'HelloApp/about.html')
+   
 def contact(request):
-    return HttpResponse("Manchar")
-
-    
-
-
+    #return HttpResponse("Transflower Learning Pvt. Ltd.")
+    return render(request, 'HelloApp/contact.html')
