@@ -27,8 +27,7 @@ class Customer:
 """
     #Destructor to perform cleanup when the object is deleted
     def __del__(self):
-        #print(f"Customer object {self} is being destroyed.")
-
+        print(f"Customer object {self} is being destroyed.")
 
     # Getter method for 'name'
     def get_name(self):
@@ -37,5 +36,8 @@ class Customer:
     # Setter method for 'name'
     def set_name(self, new_name):
         self.name = new_name
+    
+    # Delete the Customer object (destructor is automatically called)
+    del object_name
 
 """
