@@ -16,9 +16,6 @@ def contact(request):
     #return HttpResponse("Transflower Learning Pvt. Ltd.")
     return render(request, 'HelloApp/contact.html')
 
-def login(request):
-    return render(request,'HelloApp/login.html')
-
 def catalog(request):
     products = [
     {"name": "Laptop", "description": "A high-performance laptop", "price": 999.99},

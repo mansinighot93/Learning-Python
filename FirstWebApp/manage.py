@@ -3,7 +3,7 @@
 import os
 import sys
 
-
+# Define the main function that creates and manipulates objects
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'FirstWebApp.settings')
@@ -17,6 +17,6 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
-
+# Call the main function
 if __name__ == '__main__':
     main()
