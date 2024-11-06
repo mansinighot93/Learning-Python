@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import Customer, Product
+from .forms import LoginForm,RegisterForm
 
 def home(request):
     #return HttpResponse("Welcome to Transflower")
@@ -53,4 +54,28 @@ def customers(request):
     return render(request, 'HelloApp/customers.html',{'customers': customers})
 
 def login(request):
-    return render(request,'HelloApp/login.html')
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+
+            return render(request,'HelloApp/welcome.html',{'password':password,'email':email})
+    else:
+        form = LoginForm()
+    return render(request,'HelloApp/login.html',{'form':form})
+
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            location = form.cleaned_data['location']
+            contactnumber = form.cleaned_data['contactnumber']
+            firstname = form.cleaned_data['firstname']
+            lastname = form.cleaned_data['lastname']
+
+            return render(request,'HelloApp/welcome.html',{'email':email,'password':'manasi'})
+    else:
+        form = RegisterForm()
+    return render(request,'HelloApp/register.html',{'form':form})
