@@ -268,34 +268,6 @@ def day_of_week(request):
 
 In this example, we use an `if-elif-else` structure to simulate a switch statement, checking the value of `day` and returning a message based on the input.
 
-#### **Using `match-case` (Python 3.10+): The Modern "Switch" Statement**
-
-In Python 3.10 and later, you can use the `match-case` statement, which is very similar to a traditional `switch` statement in other languages.
-
-**Example: Using `match-case`**
-
-```python
-# In a Django view (Python 3.10+)
-def day_of_week(request):
-    day = request.GET.get('day', '').lower()  # Assume 'day' is passed as a query parameter
-    match day:
-        case 'monday':
-            return HttpResponse("Start of the work week!")
-        case 'friday':
-            return HttpResponse("Almost the weekend!")
-        case 'sunday':
-            return HttpResponse("Weekend relaxation!")
-        case _:
-            return HttpResponse("Just another day.")
-```
-
-- The `match` statement matches the value of `day`, and each `case` represents a possible value.
-- The `case _:` is a "catch-all" equivalent to `else` in an `if-elif-else` structure.
-
-This feature makes Python's syntax cleaner when you need to match multiple possible values and execute code based on those values.
-
----
-
 
 ### **e. Input and Output on Console**
 
